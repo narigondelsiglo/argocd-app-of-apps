@@ -1,0 +1,9 @@
+domain: example.com
+
+letsencrypt:
+  email: youremail@example.com
+  http01: true
+
+repo:
+  url: https://github.com/narigondelsiglo/argocd-app-of-apps
+  path: /
