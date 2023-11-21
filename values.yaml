@@ -6,4 +6,5 @@ letsencrypt:
 
 repo:
   url: https://github.com/narigondelsiglo/argocd-app-of-apps
+  revision: main
   path: /
