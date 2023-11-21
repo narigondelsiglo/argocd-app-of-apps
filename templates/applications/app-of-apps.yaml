@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-of-apps
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "20"
+    notifications.argoproj.io/subscribe.on-health-degraded.slack: platform-engineering-alerts
+    notifications.argoproj.io/subscribe.on-sync-failed.slack: platform-engineering-alerts
+spec:
+  destination:
+    namespace: argocd
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    repoURL: {{ .Values.repo.url }}
+    targetRevision: {{ .Values.repo.revision }}
+    path: {{ .Values.repo.path }}
+    helm:
+      releaseName: app-of-apps
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: false
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
+  ignoreDifferences:
+  - group: "*"
+    kind: Application
+    jsonPointers:
+    - /spec/syncPolicy
