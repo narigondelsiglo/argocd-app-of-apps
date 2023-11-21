@@ -5,8 +5,6 @@ metadata:
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "20"
-    notifications.argoproj.io/subscribe.on-health-degraded.slack: platform-engineering-alerts
-    notifications.argoproj.io/subscribe.on-sync-failed.slack: platform-engineering-alerts
 spec:
   destination:
     namespace: argocd
