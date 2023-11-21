@@ -1,0 +1,15 @@
+apiVersion: v1
+entries:
+  app-of-apps:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-11-21T16:43:31.417646499Z"
+    description: An umbrella chart which embeds all cluster-apps apps ArgoCD should
+      install
+    digest: af3dc58e2264c689f2b3d6693b692af75a09b6a5dc4b8f393e07089ce59f1cad
+    name: app-of-apps
+    type: application
+    urls:
+    - https://github.com/narigondelsiglo/argocd-app-of-apps/releases/download/app-of-apps-1.0.4/app-of-apps-1.0.4.tgz
+    version: 1.0.4
+generated: "2023-11-21T16:43:31.417661307Z"
